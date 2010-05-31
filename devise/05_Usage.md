@@ -62,3 +62,27 @@
       # Setup accessible (or protected) attributes for your model
       attr_accessible :email, :password, :password_confirmation
     end
+
+!SLIDE 
+# routes.rb #
+
+    @@@ruby
+    devise_for :users
+
+!SLIDE smaller
+# I18n #
+
+    @@@yml
+    ru:
+      devise:
+        mailer:
+          user: 
+            confirmation_instructions: 'Пожалуйста, подтвердите регистрацию аккаунта!'
+            reset_password_instructions: 'Пройдите по ссылке для сброса пароля'
+          admin:
+            confirmation_instructions: 'Подтвердите доступ к администрированию сайта'
+        sessions:
+          user:
+            signed_in: 'Добро пожаловать!'
+          admin:
+            signed_in: 'Dashboard администратора'
