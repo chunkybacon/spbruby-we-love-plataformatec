@@ -1,3 +1,3 @@
 !SLIDE 
-# Rack stack #
+# <span style="text-decoration:underline;">Rack stack</span> #
 
