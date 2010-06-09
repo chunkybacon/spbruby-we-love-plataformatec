@@ -1,4 +1,9 @@
 App::Application.routes.draw do |map|
+
+  namespace :admin do
+    resources :meetings
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
