@@ -17,10 +17,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'ruby-debug'
 
 # Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+gem "inherited_resources", :git => "git://github.com/josevalim/inherited_resources.git"
+gem "devise", :git => "git://github.com/plataformatec/devise.git", :ref => '5f2a19d7844abf341ab355bfd7de21ae861c1aae'
+gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git", :ref => '35f9c01324fb2cb42dbede7f6482b9212f2eba5f'
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test
