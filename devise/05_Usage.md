@@ -1,4 +1,4 @@
-!SLIDE 
+!SLIDE transition=uncover
 # Использование #
 
 !SLIDE
@@ -51,7 +51,6 @@
         
 !SLIDE smaller
 # Модель в разрезе #
-
     @@@ruby
     class User < ActiveRecord::Base
       # Include default devise modules. Others available are:
@@ -72,7 +71,7 @@
 !SLIDE smaller
 # I18n #
 
-    @@@yml
+    @@@ruby
     ru:
       devise:
         mailer:

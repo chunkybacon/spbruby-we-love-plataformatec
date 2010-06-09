@@ -1,4 +1,4 @@
-!SLIDE smbullets incremental
+!SLIDE smbullets incremental transition=uncover
 # Модули #
 
 * **Database Authenticatable**: шифрует и хранит пароль в базе данных. Аутентификация может производиться как с помощью POST-запроса, так и через HTTP Basic Authentication.
