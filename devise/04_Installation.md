@@ -1,4 +1,4 @@
-!SLIDE 
+!SLIDE transition=uncover
 # Инсталляция #
 
 !SLIDE

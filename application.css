@@ -1,4 +1,11 @@
+pre.sh_sourceCode {
+  background-color: #fbfbfb;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
 /*YAML too large for usual screens*/
-pre.sh_yml {
-  font-size: 1.5em;
+pre.sh_ruby {
+  font-size: 2.0em;
 }
