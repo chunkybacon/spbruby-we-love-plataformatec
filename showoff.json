@@ -1,1 +1,1 @@
-{ "name": "We love Plataformatec", "sections": [ {"section":"begin"}, {"section":"rack"}, {"section":"devise"} ]}
+{ "name": "We love Plataformatec", "sections": [ {"section":"begin"}, {"section":"rack"}, {"section":"warden"}, {"section":"devise"} ]}
