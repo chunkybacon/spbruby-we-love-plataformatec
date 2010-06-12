@@ -10,8 +10,9 @@
 !SLIDE
 # Multiple applications. One "shared" authentication. #
 
-!SLIDE
+!SLIDE small
 
+    @@@ruby
     Rack::Builder.new do
 
       use Rack::Session::Cookie       # warden MUST be downstream of it

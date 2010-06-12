@@ -2,6 +2,8 @@
 # Стратегии, "логика" аутентификации: Warden::Strategies. #
 
 !SLIDE
+
+    @@@ruby
     Warden::Strategies.add(:passport) do
 
       def valid?
@@ -17,6 +19,7 @@
 !SLIDE bullets incremental
 # Использование стратегий. #
 
+    @@@ruby
     env['warden'].authenticate(:passport, :password)
 
 * by passport

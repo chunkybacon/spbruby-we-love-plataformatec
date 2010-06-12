@@ -4,6 +4,7 @@
 !SLIDE smaller transition=uncover
 # Rack-Middleware SPECification
 
+    @@@ruby
     module Rack
       # Forces garbage collection after each request.
       class GarbageCollector
@@ -22,6 +23,7 @@
 !SLIDE smaller
 # Request and Response Filtering
 
+    @@@ruby
     class Filtering
       def initialize(app)
         @app = app
