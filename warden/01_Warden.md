@@ -7,8 +7,9 @@
     gem "warden", "0.10.7"
     gem install warden --version=0.10.7
 
-!SLIDE
-# Multiple applications. One "shared" authentication. #
+!SLIDE small
+# Multiple applications. #
+# One "shared" authentication. #
 
 !SLIDE small
 
