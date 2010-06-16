@@ -1,8 +1,8 @@
 !SLIDE 
 # Rack-Stack #
 
-!SLIDE smaller transition=uncover
-# Rack-Middleware SPECification
+!SLIDE small transition=uncover
+# SPECification
 
     @@@ruby
     module Rack
@@ -20,7 +20,7 @@
       end
     end
 
-!SLIDE smaller
+!SLIDE small
 # Request and Response Filtering
 
     @@@ruby
@@ -30,19 +30,24 @@
       end
 
       def call(env)
-        # do something with env
+        # request = Rack::Request.new(env)
+        # враг не пройдет!
         response = @app.call(env)
-        # do something with response
+        # выход по пропускам и только после санитарной обработки
         response # [HTTPStatus, #to_hash, #each (yields Strings)]
       end
     end
 
+!SLIDE bullets incremental small
+# Только так, и это Rack %)
+
+* Rack::Static
+* Rack::Deflater
+* YourMiddlewareNameHere
+
 !SLIDE small
-# Middleware Stack
+# Builder
 
-    use(middleware, *args, &block)
+    @@@ruby
+    use(middleware, *args, &block) #, luke
     run(app)
-
-    M1 -> M2(Auth) -> ... MN -> app(ENDPOINT)
-           \
-           ENDPOINT
