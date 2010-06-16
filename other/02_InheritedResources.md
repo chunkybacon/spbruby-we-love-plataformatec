@@ -161,7 +161,6 @@
         belongs_to :tricks, :jokes, :polymorphic => true
       end
     end
-    @@@
 
 !SLIDE
 
@@ -172,7 +171,6 @@
     class TrickstersController < InheritedResources::Base
       belong_to :trick, :singleton => true
     end
-    @@@
 
 !SLIDE
 
@@ -190,10 +188,12 @@
     class TricksController < InheritedResources::Base
       private
         def collection
-          @tricks || end_of_association_chain.paginate(:page => params[:page])
+          @tricks || end_of_association_chain.
+            paginate(:page => params[:page])
         end
     end
-    @@@
+
+!SLIDE
 
 ## У меня все не как у людей
 
@@ -219,7 +219,8 @@
         destroy! { root_url }
       end
     end
-    @@@
+
+!SLIDE
 
 ## У меня все не как у людей
 
@@ -237,7 +238,8 @@
         end
       end
     end
-    @@@
+
+!SLIDE
 
 ## У меня все не как у людей
 
@@ -249,6 +251,7 @@
         failure.html { redirect_to trick_path(@trick) }
       end
     end
-    @@@
+
+!SLIDE
 
 ## А что в views?
