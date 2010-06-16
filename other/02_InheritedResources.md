@@ -4,12 +4,13 @@
 
 !SLIDE
 
-## Делает из
+# Делает из
 
     @@@ ruby
     class TricksController < ApplicationController
       # GET /tricks
       # GET /tricks.xml
+
       def index
         @tricks = Trick.all
         respond_to do |format|
@@ -17,12 +18,13 @@
           format.xml  { render :xml => @tricks }
         end
       end
+
       # И еще 70 строк в этом духе
     end
 
 !SLIDE
 
-## Вот это
+# Вот это
 
     @@@ ruby
     class TricksController < InheritedResources::Base
@@ -254,4 +256,37 @@
 
 !SLIDE
 
-## А что в views?
+# А что в views?
+
+!SLIDE
+
+## Переменные
+
+    @@@ ruby
+    @trick, @tricks
+
+## Helpers
+
+    @@@ ruby
+    resource #=> @trick
+    resources #=> @tricks
+    resource_class #=> Trick
+
+!SLIDE
+
+## URL Helpers
+
+    @@@ ruby
+    resource_url               # => /tricks/#{@trick.to_param}
+    resource_url(trick)        # => /tricks/#{trick.to_param}
+    # new_resource_url, edit_resource_url
+    collection_url             # => /tricks
+    parent_url                 # => /
+
+!SLIDE
+
+# Зачем?
+
+## Экономит время
+## Не нужно тестировать контроллеры
+## Дисциплинирует
