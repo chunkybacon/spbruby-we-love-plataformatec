@@ -22,6 +22,7 @@
 
 !SLIDE small
 # Request and Response Filtering
+### a.k.a "после сборки - обработать напильником" ###
 
     @@@ruby
     class Filtering
@@ -34,18 +35,11 @@
         # враг не пройдет!
         response = @app.call(env)
         # выход по пропускам и только после санитарной обработки
-        response # [HTTPStatus, #to_hash, #each (yields Strings)]
+        response
       end
     end
 
-!SLIDE bullets incremental small
-# Только так, и это Rack %)
-
-* Rack::Static
-* Rack::Deflater
-* YourMiddlewareNameHere
-
-!SLIDE small
+!SLIDE smalls
 # Builder
 
     @@@ruby

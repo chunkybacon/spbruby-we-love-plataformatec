@@ -11,7 +11,8 @@
 # Multiple applications. #
 # One "shared" authentication. #
 
-!SLIDE small
+!SLIDE smaller
+# Setup #
 
     @@@ruby
     Rack::Builder.new do
@@ -20,8 +21,8 @@
       use MyCustomSessionMiddleware   # and of it...
 
       use Warden::Manager do |manager|
-        manager.default_strategies :passport  # strategies "by default"
-        manager.failure_app = GoAway          # failure application (required)
+        manager.default_strategies :passport, :password  # strategies "by default"
+        manager.failure_app = GoAway                     # failure application (required)
       end
 
       run SomethingAwesome

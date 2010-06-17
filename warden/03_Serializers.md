@@ -1,17 +1,24 @@
-!SLIDE bullets
-# Хранение информации о пользователе: Serializers #
+!SLIDE
+# Serializers #
+### Хранение информации о пользователе ###
 
-*  store(user,scope)
-*  fetch
-*  stored?
-*  delete.
+!SLIDE bullets incremental small
+
+## store(user, scope)
+* fetch(scope)
+* stored?(scope)
+* delete(scope, user=nil)
 
 !SLIDE small
-# Warden::SessionSerializer #
+# Setup #
 
     @@@ruby
     use Warden::Manager do |manager|
-      manager.serialize_into_session { |user| user.vkontakte_id }
-      manager.serialize_from_session { |vkontakte_id| User.get(vkontakte_id) }
+      manager.serialize_into_session do |user|
+        user.vkontakte_id
+      end
+      manager.serialize_from_session do |vkontakte_id|
+        User.find_by_vkontakte_id(vkontakte_id)
+      end
     end
 
