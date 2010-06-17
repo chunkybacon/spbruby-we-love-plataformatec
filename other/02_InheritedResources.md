@@ -161,3 +161,97 @@
         belongs_to :tricks, :jokes, :polymorphic => true
       end
     end
+
+!SLIDE
+
+## У меня все по полочкам
+
+    @@@ ruby
+    # /tricks/1/trickster
+    class TrickstersController < InheritedResources::Base
+      belong_to :trick, :singleton => true
+    end
+
+!SLIDE
+
+## У меня все сложно
+
+    @@@ ruby
+    class TricksController < InheritedResources::Base
+      private
+
+        def begin_of_association_chain
+          @current_user
+        end
+    end
+
+    class TricksController < InheritedResources::Base
+      private
+        def collection
+          @tricks || end_of_association_chain.
+            paginate(:page => params[:page])
+        end
+    end
+
+!SLIDE
+
+## У меня все не как у людей
+
+    @@@ ruby
+    class TricksController < InheritedResources::Base
+      def destroy
+        destroy! do |format|
+          format.html { redirect_to root_url }
+        end
+      end
+    end
+
+    class TricksController < InheritedResources::Base
+      def destroy
+        destroy! do |format|
+          format.html { root_url }
+        end
+      end
+    end
+
+    class TricksController < InheritedResources::Base
+      def destroy
+        destroy! { root_url }
+      end
+    end
+
+!SLIDE
+
+## У меня все не как у людей
+
+    @@@ ruby
+    class TricksController < InheritedResources::Base
+      def destroy
+        destroy!(:notice => 'БДЫЩЬ!')
+      end
+    end
+
+    class TricksController < InheritedResources::Base
+      def update
+        update! do |success, failure|
+          failure.html { redirect_to trick_path(@trick) }
+        end
+      end
+    end
+
+!SLIDE
+
+## У меня все не как у людей
+
+    @@@ ruby
+    class TricksController < InheritedResources::Base
+      include InheritedResources::DSL
+
+      update! do |success, failure|
+        failure.html { redirect_to trick_path(@trick) }
+      end
+    end
+
+!SLIDE
+
+## А что в views?
