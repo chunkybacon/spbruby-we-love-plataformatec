@@ -14,6 +14,7 @@
     env['warden'].authenticated?(:citizen)
     env['warden'].authenticate(:passport, :scope => :citizen)
     env['warden'].authenticate!(:passport, :scope => :citizen)
+
     env['warden'].logout(:citizen)
     env['warden'].logout
 

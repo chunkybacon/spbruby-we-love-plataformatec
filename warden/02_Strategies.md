@@ -46,6 +46,6 @@
     @@@ruby
     env['warden'].authenticate!
     env['warden'].authenticate! :passport, :password
-    
+
     env['warden'].authenticate! :passport
 

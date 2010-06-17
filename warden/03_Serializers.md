@@ -10,7 +10,7 @@
 * delete(scope, user=nil)
 
 !SLIDE small
-# Warden::SessionSerializer #
+# Setup #
 
     @@@ruby
     use Warden::Manager do |manager|
