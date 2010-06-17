@@ -1,11 +1,13 @@
-!SLIDE bullets incremental
+!SLIDE
 # Scopes #
 
-* Обеспечивают warden дополнительную гибкость в управлении процессом аутентификации.
-* Позволяют реализовать разграничение доступа.
+!SLIDE bullets incremental small
+
+* Одна сессия. Много scopes.
+* Scopes позволяют реализовать разграничение доступа.
 * Devise любит scopes!
 
-!SLIDE
+!SLIDE small
 # Scopes #
 
     @@@ruby
@@ -15,12 +17,12 @@
     env['warden'].logout(:citizen)
     env['warden'].logout
 
-!SLIDE
-# env['warden'].session тоже любит scopes ;) #
+!SLIDE small
+# session тоже любит scopes ;) #
 
     @@@ruby
     env['warden'].session[:passport]
     env['warden'].session(:citizen)[:passport]
 
-!SLIDE
+!SLIDE small
 # warden + scopes = LOVE #
