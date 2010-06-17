@@ -34,7 +34,7 @@
         # враг не пройдет!
         response = @app.call(env)
         # выход по пропускам и только после санитарной обработки
-        response # [HTTPStatus, #to_hash, #each (yields Strings)]
+        response
       end
     end
 
