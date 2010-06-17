@@ -22,6 +22,7 @@
 
 !SLIDE small
 # Request and Response Filtering
+### a.k.a "после сборки - обработать напильником" ###
 
     @@@ruby
     class Filtering
@@ -38,14 +39,7 @@
       end
     end
 
-!SLIDE bullets incremental small
-# Только так, и это Rack %)
-
-* Rack::Static
-* Rack::Deflater
-* YourMiddlewareNameHere
-
-!SLIDE small
+!SLIDE smalls
 # Builder
 
     @@@ruby

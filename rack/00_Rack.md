@@ -11,10 +11,25 @@
 * Middleware
 * Application
 
-!SLIDE transition=uncover bullets incremental small
+!SLIDE small
+# Rack::Request #
+### Интерфейс доступа к переменным окружения ###
 
-## Rack::Request
-* Rack::Response
-* Rack::Utils
-* Rack::Builder
-* et cetera, et cetera
+!SLIDE small
+# Merb::Request #
+
+    @@@ruby
+    def self.new(env, *args)
+      if self == Merb::Request
+        env["merb.request"] ||= super
+      else
+        super
+      end
+    end
+
+!SLIDE small center
+# Rack::Response #
+### Интерфейс для создания response ###
+
+    @@@ruby
+    response.finish #=> [#to_i, #to_hash, #each]
