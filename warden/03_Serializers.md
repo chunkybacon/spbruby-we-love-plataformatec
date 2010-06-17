@@ -2,12 +2,12 @@
 # Serializers #
 ### Хранение информации о пользователе ###
 
-!SLIDE smbullets incremental small
+!SLIDE bullets incremental small
 
-* store(user,scope)
-* fetch
-* stored?
-* delete.
+## store(user, scope)
+* fetch(scope)
+* stored?(scope)
+* delete(scope, user=nil)
 
 !SLIDE small
 # Warden::SessionSerializer #

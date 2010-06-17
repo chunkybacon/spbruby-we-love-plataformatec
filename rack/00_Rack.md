@@ -2,18 +2,18 @@
 # Rack #
 
 !SLIDE small
-# Python Web Server Gateway Interface #
+# Python WSGI #
 ### PEP 333 ###
 
-!SLIDE bullets incremental small
+!SLIDE transition=uncover bullets incremental small
 
-* Server
+## Server
 * Middleware
 * Application
 
-!SLIDE bullets incremental small
+!SLIDE transition=uncover bullets incremental small
 
-* Rack::Request
+## Rack::Request
 * Rack::Response
 * Rack::Utils
 * Rack::Builder

@@ -44,9 +44,8 @@
 # Попытка - не пытка #
 
     @@@ruby
-    env['warden'].authenticate(:passport, :password)
-
-* by passport
-* by password
-* GoAway
+    env['warden'].authenticate!
+    env['warden'].authenticate! :passport, :password
+    
+    env['warden'].authenticate! :passport
 

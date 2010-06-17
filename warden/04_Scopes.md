@@ -3,7 +3,7 @@
 
 !SLIDE bullets incremental small
 
-* Одна сессия. Много scopes.
+## Одна сессия. Много scopes.
 * Scopes позволяют реализовать разграничение доступа.
 * Devise любит scopes!
 
