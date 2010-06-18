@@ -30,9 +30,11 @@
     class TricksController < InheritedResources::Base
     end
 
-!SLIDE
+!SLIDE center
 
 # Дьявол-то в деталях
+
+![Много всего](details.jpg)
 
 !SLIDE
 
@@ -55,22 +57,6 @@
     class TricksController < InheritedResources::Base
       actions :all, :except => [:destroy]
     end
-
-!SLIDE
-
-## Я — педант
-
-    @@@ ruby
-    class TricksController < InheritedResources::Base
-      respond_to :html, :xml
-    end
-
-    class TricksController < InheritedResources::Base
-      respond_to :html
-      respond_to :xml, :only => :index
-    end
-
-## TODO: А что по дефолту?
 
 !SLIDE
 
@@ -181,7 +167,6 @@
     @@@ ruby
     class TricksController < InheritedResources::Base
       private
-
         def begin_of_association_chain
           @current_user
         end
@@ -283,10 +268,17 @@
     collection_url             # => /tricks
     parent_url                 # => /
 
-!SLIDE
+!SLIDE bullets incremental
+
+# Responders
+
+* FlashResponder
+* HttpCacheResponder
+
+!SLIDE bullets incremental
 
 # Зачем?
 
-## Экономит время
-## Не нужно тестировать контроллеры
-## Дисциплинирует
+* Экономит время
+* Не нужно тестировать контроллеры
+* Дисциплинирует
