@@ -25,8 +25,17 @@
     $ rails generate devise:install
 ## Views
     $ rails generate devise:views
-## Model
+
+!SLIDE 
+# Роли #
+
+!SLIDE
+
+# Одна роль - одна модель #
+
+    @@@ruby
     $ rails generate devise User
+    $ rails generate devise Admin
 
 !SLIDE
 # Модель #
@@ -79,6 +88,7 @@
 
     @@@ruby
     devise_for :users
+    devise_for :admins
 
 !SLIDE smaller
 # I18n #
@@ -97,3 +107,26 @@
             signed_in: 'Добро пожаловать!'
           admin:
             signed_in: 'Dashboard администратора'
+
+!SLIDE 
+# Контроллеры и хелперы #
+
+### Стой, кто идет?
+
+    @@@ruby
+    before_filter :authenticate_user!
+
+### -- Черепаха, это ты?
+
+    @@@ruby
+    user_signed_in?
+
+### -- Даааа...
+
+    @@@ruby
+    current_user
+
+### -- Ау! Есть тут кто-нибудь?
+
+    @@@ruby
+    anybody_signed_in?
