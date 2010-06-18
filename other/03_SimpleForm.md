@@ -86,3 +86,42 @@
     f.association :company, 
                   :collection => Company.active.all(:order => 'name'), 
                   :prompt => "Choose a Company"
+
+!SLIDE smaller
+# Генераторы #
+
+    @@@sh
+    $ rails generate scaffold article \
+      title:string body:text author:references
+    ...
+    create      app/views/articles/_form.html.erb
+    ...
+
+!SLIDE smaller
+# _form.html.erb #
+
+    @@@html
+    <%= simple_form_for(@article) do |f| %>
+      <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+          <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="inputs">
+        <%= f.input :title %>
+        <%= f.input :body %>
+        <%= f.association :author %>
+      </div>
+
+      <div class="actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+
