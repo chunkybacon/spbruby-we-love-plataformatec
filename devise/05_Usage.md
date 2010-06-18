@@ -4,20 +4,32 @@
 !SLIDE
 # Инициализация #
 
-## Rails3 beta3
-    ./script/rails g devise_install
+!SLIDE
+# Инициализация #
 
-## Rails 2.3
-    ./script/generate devise_install
+## Initializer
+    $ rails generate devise:install
+
+!SLIDE
+# Инициализация #
+
+## Initializer
+    $ rails generate devise:install
+## Views
+    $ rails generate devise:views
+
+!SLIDE
+# Инициализация #
+
+## Initializer
+    $ rails generate devise:install
+## Views
+    $ rails generate devise:views
+## Model
+    $ rails generate devise User
 
 !SLIDE
 # Модель #
-
-## Rails3 beta3
-    ./script/rails g devise User
-
-## Rails 2.3
-    ./script/generate devise User
 
 
 !SLIDE smaller
